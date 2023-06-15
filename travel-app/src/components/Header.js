@@ -4,9 +4,9 @@ function Header() {
   return (
     <div className="header">
       <span className="emoji">🏝️</span>
-      <span className="text">
+      <h2>
         The world is a book, and those who do not travel read only a page.
-      </span>
+      </h2>
       <span className="emoji">🛻</span>
     </div>
   );
