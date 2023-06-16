@@ -7,17 +7,28 @@ function ItemsList({ items, onToggleItem, onDeleteItem, onClearList }) {
 
   let sortedItems;
 
-  if (sortBy === "input") sortedItems = items;
+  switch (sortBy) {
+    case "input":
+      sortedItems = items;
+      break;
 
-  if (sortBy === "explanation")
-    sortedItems = items
-      .slice()
-      .sort((a, b) => a.backpack.localeCompare(b.backpack));
+    case "explanation":
+      sortedItems = items
+        .slice()
+        .sort((a, b) => a.backpack.localeCompare(b.backpack));
+      break;
 
-  if (sortBy === "packed")
-    sortedItems = items
-      .slice()
-      .sort((a, b) => Number(a.packed) - Number(b.packed));
+    case "packed":
+      sortedItems = items
+        .slice()
+        .sort((a, b) => Number(a.packed) - Number(b.packed));
+      break;
+
+    default:
+      sortedItems = items;
+      break;
+  }
+
   return (
     <div className="list">
       <ul>
