@@ -1,4 +1,5 @@
 import Item from "./Item";
+import "./styles/item.css";
 
 function ItemsList({ items, onToggleItem, onDeleteItem }) {
   console.log(items);
